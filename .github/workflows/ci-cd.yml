@@ -15,16 +15,13 @@ jobs:
 
       - name: Check for Changes
         run: |
-          # Check if there are changes in the working directory
-          if [ -n "$(git status --porcelain)" ]; then
+
             git config user.name "bclme"
             git config user.email "blas_lomibao@yahoo.com"
             git checkout main  # Switch to the 'main' branch
             git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
             git push origin main  # Push the merged changes to 'main'
-          else
-            echo "No changes to commit."
-          fi
+ 
 
       - name: Debug Repository Contents
         run: |

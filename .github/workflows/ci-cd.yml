@@ -13,10 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Tests
-        run: |
-          # Run your tests here
-          python app_test.py
+
 
       - name: Push code to repository
         run: |

@@ -3,7 +3,7 @@ name: Push Code and Run Tests
 on:
   push:
     branches:
-      - temp_changes  # Trigger the workflow on pushes to the 'temp_changes' branch
+      - main  # Trigger the workflow on pushes to the 'main' branch
 
 jobs:
   push-code-and-test:
@@ -15,11 +15,10 @@ jobs:
 
       - name: Check for Changes
         run: |
-          # Check if there are changes in the working directory of 'temp_changes' branch
-          git checkout temp_changes
+          # Check if there are changes in the working directory
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "bclme"
-            git config user.email "blas_lomibao@yahoo.com"           
+            git config user.email "blas_lomibao@yahoo.com"
             git checkout main  # Switch to the 'main' branch
             git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
             git push origin main  # Push the merged changes to 'main'

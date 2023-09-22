@@ -6,3 +6,5 @@
 <h3>About CI/CD</h3>
 
 <p>Before we dive into the practical demonstration, let's briefly discuss what CI/CD is and why it's important. CI/CD stands for Continuous Integration and Continuous Deployment. It's a set of practices and tools that allow developers to automate the process of integrating code changes into a shared repository (Continuous Integration) and deploying those changes to production or other environments (Continuous Deployment). CI/CD promotes collaboration, reduces manual errors, and accelerates software delivery.
+
+<p> You may check the rest of the article atmy pateron page. https://www.patreon.com/posts/89650773

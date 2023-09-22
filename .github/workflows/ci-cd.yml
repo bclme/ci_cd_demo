@@ -35,10 +35,3 @@ jobs:
           # Run your tests here
           python test_app.py
 
-      - name: Install dependencies
-        run: |
-          pip install pytest  # Install pytest 
-
-     - name: Run tests
-        run: |
-          pytest

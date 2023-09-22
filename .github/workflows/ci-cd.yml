@@ -17,8 +17,7 @@ jobs:
       - name: Check for Changes
         run: |
 
-            #git config user.name "bclme"
-            #git config user.email "blas_lomibao@yahoo.com"
+
             git checkout main  # Switch to the 'main' branch
             git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
             git push origin main  # Push the merged changes to 'main'

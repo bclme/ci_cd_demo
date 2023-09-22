@@ -12,11 +12,15 @@ jobs:
       - name: Check for Changes
         run: |
 
-            git branch --all -vv
-  
-            git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
-            git push --set-upstream origin main  # Push the merged changes to 'main'
- 
+           if [ -z "$(git ls-remote --heads origin main)" ]; then
+            # Create the 'main' branch if it doesn't exist
+            git checkout -b main
+            git push origin main
+          fi
+
+          # Merge changes from 'temp_changes' into 'main'
+          git merge temp_changes
+          git push origin main
 
       - name: Debug Repository Contents
         run: |

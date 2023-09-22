@@ -1,32 +1,17 @@
-name: CI/CD Pipeline
+name: Super-Linter
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  build:
+  super-lint:
+    name: Lint code base
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run Unit Tests
-        run: pytest
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to Production
-        # Add deployment steps here, e.g., deploying to a web server or cloud service
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

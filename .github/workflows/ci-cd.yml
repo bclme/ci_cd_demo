@@ -3,7 +3,8 @@ name: Push Code and Run Tests
 on:
   push:
     branches:
-      - temp_changes  # Trigger the workflow on pushes to the 'main' branch
+      - temp_changes
+      - main  # Trigger the workflow on pushes to the 'main' branch
 
 jobs:
   push-code-and-test:

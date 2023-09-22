@@ -15,8 +15,8 @@ jobs:
 
       - name: Push code to repository
         run: |
-          git config user.name "Your Name"
-          git config user.email "your.email@example.com"
+          git config user.name "bclme"
+          git config user.email "blas_lomibao@yahoo.com"
           git add .
           git commit -m "Pushing latest code"
           git push origin main  # Change 'main' to your branch name

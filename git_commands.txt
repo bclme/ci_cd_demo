@@ -8,3 +8,7 @@ git config user.email
 git add .
 git commit -m "update all files" .
 git push origin main
+
+git add .github/workflows/ci-cd.yml   # Stage the updated workflow file
+git commit -m "Update CI/CD workflow"  # Commit the changes with a descriptive message
+git push origin main                  # Push the changes to your remote GitHub repository

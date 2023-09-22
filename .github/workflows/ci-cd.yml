@@ -15,7 +15,7 @@ jobs:
             git branch --all -vv
   
             git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
-            git push origin main  # Push the merged changes to 'main'
+            git push --set-upstream origin main  # Push the merged changes to 'main'
  
 
       - name: Debug Repository Contents

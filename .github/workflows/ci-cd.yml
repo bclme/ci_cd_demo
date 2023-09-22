@@ -33,4 +33,4 @@ jobs:
       - name: Run Tests
         run: |
           # Run your tests here
-          python app_test.py
+          python test_app.py

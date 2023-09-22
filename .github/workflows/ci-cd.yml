@@ -1,4 +1,4 @@
-name: Push Code
+name: Push Code and Run Tests
 
 on:
   push:
@@ -6,12 +6,17 @@ on:
       - main  # Change this to your main branch name
 
 jobs:
-  push-code:
-    name: Push code to repository
+  push-code-and-test:
+    name: Push code and run tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Run Tests
+        run: |
+          # Run your tests here
+          python app_test.py
 
       - name: Push code to repository
         run: |

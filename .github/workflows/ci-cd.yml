@@ -11,8 +11,7 @@ jobs:
 
       - name: Check for Changes
         run: |
-
-           if [ -z "$(git ls-remote --heads origin main)" ]; then
+          if [ -z "$(git ls-remote --heads origin main)" ]; then
             # Create the 'main' branch if it doesn't exist
             git checkout -b main
             git push origin main

@@ -34,3 +34,6 @@ jobs:
         run: |
           # Run your tests here
           python test_app.py
+      - name: Run tests
+        run: |
+          pytest

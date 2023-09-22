@@ -14,7 +14,7 @@ jobs:
           if [ -z "$(git ls-remote --heads origin main)" ]; then
             # Create the 'main' branch if it doesn't exist
             git checkout -b main
-            git push origin main
+            git push origin main --force
           fi
 
           # Merge changes from 'temp_changes' into 'main'

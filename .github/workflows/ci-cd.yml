@@ -13,12 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-
-
-      - name: Push code to repository
+      - name: Check for Changes
         run: |
-          git config user.name "bclme"
-          git config user.email "blas_lomibao@yahoo.com"
-          git add .
-          git commit -m "Pushing latest code"
-          git push origin main  # Change 'main' to your branch name
+          # Check if there are changes in the working directory
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "bclme"
+            git config user.email "blas_lomibao@yahoo.com"
+            git add .
+            git commit -m "Pushing latest code"
+            git push origin main  # Change 'main' to your branch name
+          else
+            echo "No changes to commit."
+          fi

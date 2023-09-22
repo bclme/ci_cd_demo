@@ -19,9 +19,13 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "bclme"
             git config user.email "blas_lomibao@yahoo.com"
+            git checkout -b temp_changes  # Create and switch to a new branch 'temp_changes'
             git add .
             git commit -m "Pushing latest code"
-            git push origin main  # Change 'main' to your branch name
+            git push origin temp_changes  # Push changes to 'temp_changes' branch
+            git checkout main  # Switch back to the 'main' branch
+            git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
+            git push origin main  # Push the merged changes to 'main'
           else
             echo "No changes to commit."
           fi

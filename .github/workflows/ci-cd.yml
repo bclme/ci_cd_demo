@@ -1,9 +1,5 @@
-name: Push Code and Run Tests
-
-on:
-  push:
-    branches:
-      - main  # Change this to your main branch name
+name: Push commit
+on: push
 
 jobs:
   push-code-and-test:
@@ -13,18 +9,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check for Changes
-        run: |
-          # Check if there are changes in the working directory
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "bclme"
-            git config user.email "blas_lomibao@yahoo.com"
-            git add .
-            git commit -m "Pushing latest code"
-            git push origin main  # Change 'main' to your branch name
-          else
-            echo "No changes to commit."
-          fi
+
 
       - name: Debug Repository Contents
         run: |
@@ -35,3 +20,7 @@ jobs:
           # Run your tests here
           python test_app.py
 
+      - name: Run Check Snake Case Variables
+        run: |
+          # Run program here
+          python vars_snake.py

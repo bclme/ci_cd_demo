@@ -18,8 +18,7 @@ jobs:
         run: |
 
             git branch --all -vv
-            git checkout -b main
-            git checkout main  # Switch to the 'main' branch
+  
             git merge temp_changes  # Merge changes from 'temp_changes' into 'main'
             git push origin main  # Push the merged changes to 'main'
  

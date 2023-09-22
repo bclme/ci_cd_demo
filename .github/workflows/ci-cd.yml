@@ -18,6 +18,7 @@ jobs:
           fi
 
           # Merge changes from 'temp_changes' into 'main'
+          git checkout -b main
           git merge temp_changes
           git push origin main --force
 

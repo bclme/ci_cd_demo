@@ -1,0 +1,10 @@
+git clone https://github.com/bclme/ci_cd_demo
+git config --local user.name "bclme"
+git config --local user.email "blas_lomibao@yahoo.com"
+
+git config user.name
+git config user.email
+
+git add .
+git commit -m "update all files" .
+git push origin main

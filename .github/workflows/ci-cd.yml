@@ -1,17 +1,22 @@
-name: Super-Linter
+name: Push Code
 
-on: push
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
 
 jobs:
-  super-lint:
-    name: Lint code base
+  push-code:
+    name: Push code to repository
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push code to repository
+        run: |
+          git config user.name "Your Name"
+          git config user.email "your.email@example.com"
+          git add .
+          git commit -m "Pushing latest code"
+          git push origin main  # Change 'main' to your branch name

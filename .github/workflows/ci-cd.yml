@@ -19,7 +19,7 @@ jobs:
 
           # Merge changes from 'temp_changes' into 'main'
           git merge temp_changes
-          git push origin main
+          git push origin main --force
 
       - name: Debug Repository Contents
         run: |

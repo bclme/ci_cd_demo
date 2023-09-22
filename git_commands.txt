@@ -1,3 +1,5 @@
+These are the commands I use:
+
 git clone https://github.com/bclme/ci_cd_demo
 git config --local user.name "bclme"
 git config --local user.email "blas_lomibao@yahoo.com"
